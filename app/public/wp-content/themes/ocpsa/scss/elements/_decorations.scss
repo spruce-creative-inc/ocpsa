@@ -1,0 +1,119 @@
+.decoration {
+  position: absolute;
+  z-index: 1;
+
+  // Locations
+  &--text-above {
+    top: 0;
+    translate: -25% calc(-100% - 1.5rem);
+  }
+  &--text-below {
+    bottom: 0;
+    translate: -25% calc(100% + 1.5rem);
+  }
+  &--middle-above {
+    top: 0;
+    translate: -25% calc(-100% - 1.5rem);
+    @include tablet {
+      right: 0;
+      translate: calc(50% + 0.75rem) calc(-50% - 1.5rem);
+    }
+    @include desktop {
+      translate: calc(50% + 0.75rem) calc(-100% - 1.5rem);
+    }
+  }
+  &--middle-below {
+    top: 0;
+    translate: -25% calc(-100% - 1.5rem);
+    @include tablet {
+      bottom: 0;
+      top: auto;
+      right: 0;
+      translate: calc(50% + 0.75rem) calc(50% + 1.5rem);
+    }
+    @include desktop {
+      translate: calc(50% + 0.75rem) calc(100% + 1.5rem);
+    }
+  }
+  &--image-above {
+    right: 0;
+    translate: 25% -50%;
+  }
+  &--image-below {
+    right: 0;
+    bottom: 0;
+    translate: 25% 50%;
+  }
+
+  // Types
+  &--spiral {
+    width: min(33.333%, 7.5rem);
+  }
+  &--multi-shape {
+    width: min(50%, 15rem);
+  }
+  &--squiggle-flag {
+    width: min(33.333%, 12rem);
+  }
+  &--squiggle-x {
+    width: min(33.333%, 15rem);
+  }
+}
+
+.section-flexible {
+  &--decoration-text-above,
+  &--decoration-text-below,
+  &--decoration-middle-above,
+  &--decoration-middle-below {
+    .section-flexible__content {
+      position: relative;
+    }
+  }
+  &--decoration-image-above,
+  &--decoration-image-below {
+    .section-flexible__image {
+      position: relative;
+    }
+  }
+  &.regular-content:nth-child(2n - 1) {
+    .decoration {
+      &--text-above {
+        right: 0;
+        translate: 25% calc(-100% - 1.5rem);
+      }
+      &--text-below {
+        right: 0;
+        translate: 25% calc(100% + 1.5rem);
+      }
+      &--middle-above {
+        @include tablet {
+          right: auto;
+          left: 0;
+          translate: calc(-100% - 0.75rem) calc(-50% - 1.5rem);
+        }
+        @include desktop {
+          translate: calc(-50% - 0.75rem) calc(-100% - 1.5rem);
+        }
+      }
+      &--middle-below {
+        @include tablet {
+          bottom: 0;
+          top: auto;
+          left: 0;
+          translate: calc(-100% - 0.75rem) calc(50% + 1.5rem);
+        }
+        @include desktop {
+          translate: calc(-100% - 0.75rem) calc(100% + 1.5rem);
+        }
+      }
+      &--image-above {
+        right: auto;
+        translate: -25% -50%;
+      }
+      &--image-below {
+        right: auto;
+        translate: -25% 50%;
+      }
+    }
+  }
+}

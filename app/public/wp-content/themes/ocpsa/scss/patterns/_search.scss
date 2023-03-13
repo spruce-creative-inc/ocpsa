@@ -1,0 +1,55 @@
+.search-modal {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  background-color: #fffffff2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  @include typeScaleH5;
+  transition: opacity $transition;
+
+  &.active {
+    display: flex;
+  }
+
+  &.transitioned {
+    opacity: 1;
+  }
+
+  &__form {
+    width: min(45rem, calc(100% - 3rem));
+    display: flex;
+    flex-direction: column;
+    // gap: 1.5rem;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+  &__field[type="search"] {
+    // border-radius: $radius 0 0 $radius;
+    border-color: #ccc;
+  }
+  &__submit {
+    display: flex;
+    gap: 0.75rem;
+    padding: $btn__padding;
+    align-items: center;
+    justify-content: center;
+    // border-radius: 0 $radius $radius 0;
+    // background-color: $color__primary;
+    // color: #fff;
+  }
+  &__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include buttonClear;
+  }
+}

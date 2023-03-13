@@ -1,0 +1,8 @@
+.multi-column-layout {
+  &__wrap {
+    @include lg_tablet {
+      display: grid;
+      grid-template-columns: repeat(var(--cols, 2), 1fr);
+    }
+  }
+}

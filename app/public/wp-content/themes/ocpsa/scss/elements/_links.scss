@@ -1,0 +1,11 @@
+a {
+  color: $color__primary;
+  transition: color $transition, background-color $transition,
+    border-color $transition, opacity $transition, transform $transition,
+    box-shadow $transition;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__secondary;
+  }
+}

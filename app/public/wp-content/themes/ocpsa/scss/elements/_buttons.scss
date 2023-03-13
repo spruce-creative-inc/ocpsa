@@ -1,0 +1,144 @@
+.btn {
+  --btn-color: #{$color__primary};
+  --btn-text-color: #fff;
+  display: inline-block;
+  background: padding-box var(--btn-color);
+  color: var(--btn-text-color);
+  border: 0.1875rem solid;
+  -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-primary.png");
+  border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-primary.png");
+  border-image-slice: 10 10 10 10;
+  border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  border-radius: 0;
+  box-shadow: $shadow;
+  padding: $btn__padding--large;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: scale $transition, padding $transition, box-shadow $transition,
+    opacity $transition, border-color $transition, background-color $transition,
+    background-position $transition, color $transition;
+
+  & + & {
+    margin-left: 0.75rem;
+  }
+
+  @include hov {
+    scale: 1.05;
+    color: var(--btn-text-color);
+  }
+
+  // &.btn--icon {
+  //   display: inline-flex;
+  //   align-items: center;
+  //   gap: 0.75rem;
+  // }
+
+  &.btn--primary-outline {
+    --btn-color: transparent;
+    --btn-text-color: #000;
+    box-shadow: none;
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-red.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-red.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--secondary {
+    --btn-color: #{$color__secondary};
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-secondary.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-secondary.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--secondary-outline {
+    --btn-color: transparent;
+    --btn-text-color: #000;
+    box-shadow: none;
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-secondary.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-secondary.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--accent {
+    --btn-color: #{$color__accent};
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-accent.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-accent.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--accent-outline {
+    --btn-color: transparent;
+    --btn-text-color: #000;
+    box-shadow: none;
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-accent.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-accent.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--tertiary {
+    --btn-color: #{$color__tertiary};
+    --btn-text-color: #000;
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-tertiary.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-tertiary.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--tertiary-outline {
+    --btn-color: transparent;
+    --btn-text-color: #000;
+    box-shadow: none;
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-tertiary.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-tertiary.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--white {
+    --btn-color: #fff;
+    --btn-text-color: #{$color__primary};
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-white.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-btn-white.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--white-outline {
+    --btn-color: transparent;
+    --btn-text-color: #fff;
+    box-shadow: none;
+    -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-white.png");
+    border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-white.png");
+    border-image-slice: 10 10 10 10;
+    border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  &.btn--full {
+    width: 100%;
+  }
+}
+
+.btn--close {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  background-color: transparent;
+  color: #000;
+}
+
+button {
+  cursor: pointer;
+}

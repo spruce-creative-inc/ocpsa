@@ -1,0 +1,98 @@
+.call-to-action-banner {
+  &__wrapper {
+    padding: 3rem;
+    text-align: center;
+    color: $color__primary;
+    @include typeScaleH5;
+    @include tablet {
+      --cols: 12;
+      display: grid;
+      grid-template-columns: repeat(var(--cols), 1fr);
+      gap: 1.5rem;
+      padding: 3rem 0;
+    }
+    @include desktop {
+      --cols: 10;
+      grid-column: 2 / span var(--cols);
+    }
+    &--primary-outline {
+      -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-primary-large.png");
+      border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-primary-large.png");
+    }
+    &--secondary-outline {
+      -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-secondary-large.png");
+      border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-secondary-large.png");
+    }
+    &--accent-outline {
+      -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-accent-large.png");
+      border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-accent-large.png");
+    }
+    &--tertiary-outline {
+      -o-border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-tertiary-large.png");
+      border-image: url("/wp-content/themes/ocpsa/images/border-image-outline-tertiary-large.png");
+    }
+    &--primary-outline,
+    &--secondary-outline,
+    &--accent-outline,
+    &--tertiary-outline {
+      border-style: solid;
+      border-image-slice: 10 10 10 10;
+      border-image-width: 0.1875rem 0.25rem 0.25rem 0.25rem;
+    }
+  }
+
+  .section-flexible {
+    &__image {
+      max-width: 10rem;
+      margin-bottom: 1.5rem;
+      @include tablet {
+        grid-column: 2 / -2;
+      }
+    }
+    &__content {
+      @include tablet {
+        grid-column: 2 / -2;
+      }
+    }
+    &__title {
+      font-weight: 400;
+      @include typeScaleH2Alt;
+    }
+  }
+
+  &.section-flexible--with-image {
+    .call-to-action-banner {
+      &__wrapper {
+        text-align: left;
+        @include tablet {
+          --cols: 8;
+          grid-column: 1 / -1;
+        }
+        @include desktop {
+          --cols: 8;
+          gap: 3rem;
+          grid-column: 1 / -1;
+        }
+      }
+    }
+    .section-flexible {
+      &__image {
+        @include tablet {
+          grid-column: 2 / 3;
+        }
+      }
+      &__content {
+        @include tablet {
+          grid-column: 3 / 8;
+        }
+      }
+    }
+  }
+
+  &.text-fff {
+    .call-to-action-banner__wrapper,
+    .section-flexible__title {
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.nav-toggle {
+  width: 2.25rem;
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  @include desktop {
+    &-wrap {
+      display: none;
+    }
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    width: calc(100% + 3rem);
+    height: calc(100% + 3rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:focus {
+    outline: 0;
+  }
+  .tog {
+    width: 100%;
+    height: 0.25rem;
+    background-color: #000;
+    position: relative;
+    transition: top $transition, bottom $transition, transform $transition,
+      background-color $transition, color $transition;
+  }
+  .top {
+    top: 0;
+  }
+
+  .bottom {
+    bottom: 0;
+  }
+
+  &.transition .top {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.transition .bottom {
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+
+  &.open .top {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &.open .bottom {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+}

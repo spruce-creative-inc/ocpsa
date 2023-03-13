@@ -1,0 +1,83 @@
+@mixin phones($type: "min") {
+  @if ($type == "min") {
+    @media only screen and (min-width: $phones-minwidth) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $phones-maxwidth) {
+      @content;
+    }
+  }
+}
+
+@mixin tablet($type: "min") {
+  @if ($type == "min") {
+    @media only screen and (min-width: $tablet-minwidth) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $tablet-maxwidth) {
+      @content;
+    }
+  }
+}
+
+@mixin lg_tablet($type: "min") {
+  @if ($type == "min") {
+    @media only screen and (min-width: $lg-tablet-minwidth) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $lg-tablet-maxwidth) {
+      @content;
+    }
+  }
+}
+
+@mixin desktop($type: "min") {
+  @if ($type == "min") {
+    @media only screen and (min-width: $desktop-minwidth) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $desktop-maxwidth) {
+      @content;
+    }
+  }
+}
+
+@mixin lg_desktop($type: "min") {
+  @if ($type == "min") {
+    @media only screen and (min-width: $lg-desktop-minwidth) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $lg-desktop-maxwidth) {
+      @content;
+    }
+  }
+}
+
+@mixin widescreen($type: "min") {
+  @if ($type == "min") {
+    @media only screen and (min-width: $widescreen-minwidth) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $widescreen-maxwidth) {
+      @content;
+    }
+  }
+}
+
+@mixin lg_widescreen($type: "min") {
+  @if ($type == "min") {
+    @media only screen and (min-width: $lg-widescreen-minwidth) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $lg-widescreen-maxwidth) {
+      @content;
+    }
+  }
+}

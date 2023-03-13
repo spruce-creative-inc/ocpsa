@@ -1,0 +1,17 @@
+.column--board-of-directors {
+  dl {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 0;
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+    dt {
+    }
+    dd {
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+}

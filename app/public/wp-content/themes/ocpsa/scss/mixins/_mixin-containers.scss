@@ -1,0 +1,105 @@
+@use "sass:math";
+
+@mixin containerBase {
+  width: min(#{$wrapper}, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@mixin containerGrid {
+  display: grid;
+  gap: 1.5rem;
+  @include containerBase;
+  grid-template-columns: repeat(12, 1fr);
+  @include lg_desktop {
+    column-gap: 3rem;
+  }
+  > * {
+    grid-column: span 12;
+    margin-bottom: 0;
+  }
+}
+
+@mixin containerFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  @include containerBase;
+  > * {
+    grid-column: span 12;
+    margin-bottom: 0;
+  }
+}
+
+@mixin grid($xs: 12, $s: 12, $m: 12, $l: 12, $xl: 12, $gap: false) {
+  display: grid;
+  @if ($gap) {
+    gap: #{$gap}rem;
+  }
+  grid-template-columns: repeat($xs, 1fr);
+  @include phones {
+    grid-template-columns: repeat($s, 1fr);
+  }
+  @include tablet {
+    grid-template-columns: repeat($m, 1fr);
+  }
+  @include desktop {
+    grid-template-columns: repeat($l, 1fr);
+  }
+  @include lg_desktop {
+    grid-template-columns: repeat($xl, 1fr);
+  }
+}
+
+@mixin gridWinged($xs: 12, $s: 12, $m: 12, $l: 12, $xl: 12, $gap: false) {
+  display: grid;
+  @if ($gap) {
+    gap: #{$gap}rem;
+  }
+  $gapSub: 0;
+  @if ($gap) {
+    $gapSub: $gap * ($xs + 1);
+  }
+  $colWidth: math.div(($wrapper - $gapSub), $xs);
+  grid-template-columns:
+    1fr repeat($xs, min(#{$colWidth}, calc((100% - #{$gapSub}rem) / #{$xs})))
+    1fr;
+  @include phones {
+    @if ($gap) {
+      $gapSub: $gap * ($s + 1);
+    }
+    $colWidth: math.div(($wrapper - $gapSub), $s);
+    grid-template-columns:
+      1fr repeat($s, min(#{$colWidth}, calc((100% - #{$gapSub}rem) / #{$s})))
+      1fr;
+  }
+  @include tablet {
+    @if ($gap) {
+      $gapSub: $gap * ($m + 1);
+    }
+    $colWidth: math.div(($wrapper - $gapSub), $m);
+    grid-template-columns:
+      1fr repeat($m, min(#{$colWidth}, calc((100% - #{$gapSub}rem) / #{$m})))
+      1fr;
+  }
+  @include desktop {
+    @if ($gap) {
+      $gapSub: $gap * ($l + 1);
+    }
+    $colWidth: math.div(($wrapper - $gapSub), $l);
+    grid-template-columns:
+      1fr repeat($l, min(#{$colWidth}, calc((100% - #{$gapSub}rem) / #{$l})))
+      1fr;
+  }
+  @include lg_desktop {
+    @if ($gap) {
+      $gapSub: $gap * ($xl + 1);
+    }
+    $colWidth: math.div(($wrapper - $gapSub), $xl);
+    grid-template-columns:
+      1fr repeat($xl, min(#{$colWidth}, calc((100% - #{$gapSub}rem) / #{$xl})))
+      1fr;
+  }
+}

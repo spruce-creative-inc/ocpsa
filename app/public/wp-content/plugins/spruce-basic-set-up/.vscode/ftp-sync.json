@@ -1,0 +1,27 @@
+{
+  "remotePath": "./public_html/sites/ocpsa/wp-content/plugins/spruce-basic-set-up",
+  "host": "198.72.96.169",
+  "username": "sprucedev",
+  "password": "0HAyCqwEu2tT",
+  "port": 21,
+  "secure": false,
+  "protocol": "ftp",
+  "uploadOnSave": false,
+  "passive": false,
+  "debug": false,
+  "privateKeyPath": null,
+  "passphrase": null,
+  "agent": null,
+  "allow": [],
+  "ignore": [
+    "\\.vscode",
+    "\\.git",
+    ".DS_Store",
+    "node_modules",
+    ".parcel-cache"
+  ],
+  "generatedFiles": {
+    "extensionsToInclude": [""],
+    "path": ""
+  }
+}

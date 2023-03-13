@@ -1,0 +1,163 @@
+// body {
+//   overflow-x: hidden;
+//   width: 100vw;
+// }
+
+#page {
+  --adminHeight: 32px;
+  min-height: calc(100vh - var(--adminHeight));
+  min-height: calc(100dvh - var(--adminHeight));
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  @media screen and (max-width: 782px) {
+    --adminHeight: 46px;
+  }
+}
+
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  @include containerGrid;
+}
+
+.contained-narrow {
+  @include tablet {
+    grid-column: 3 / span 8;
+  }
+}
+
+.contained-narrow-left {
+  @include tablet {
+    grid-column: 1 / span 8;
+    .side-bar + & {
+      grid-row: 1 / 2;
+    }
+  }
+  @include desktop {
+    .side-bar + & {
+      grid-column: 1 / span 7;
+    }
+  }
+}
+
+.contained-narrow-right {
+  @include tablet {
+    grid-column: 5 / span 8;
+  }
+}
+
+.container--winged {
+  @include gridWinged($gap: 1.5);
+  width: 100%;
+}
+
+.container--flex {
+  @include containerFlex;
+}
+
+.container--base {
+  @include containerBase;
+}
+
+.contents {
+  display: contents;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.span-columns {
+  grid-column: 1 / -1;
+}
+
+@include phones {
+  .hidden-s {
+    display: none;
+  }
+}
+
+@include tablet {
+  .hidden-m {
+    display: none;
+  }
+}
+
+@include lg_tablet {
+  .hidden-ml {
+    display: none;
+  }
+}
+
+@include desktop {
+  .hidden-l {
+    display: none;
+  }
+}
+
+@include lg_desktop {
+  .hidden-xl {
+    display: none;
+  }
+}
+
+.breakpoint-display {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: $color__tertiary;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  z-index: 1000000;
+  &::after {
+    content: "Phone Small";
+    @include phones {
+      content: "phones";
+    }
+    @include tablet {
+      content: "tablet";
+    }
+    @include lg_tablet {
+      content: "lg_tablet";
+    }
+    @include desktop {
+      content: "desktop";
+    }
+    @include lg_desktop {
+      content: "lg_desktop";
+    }
+    @include widescreen {
+      content: "widescreen";
+    }
+    @include lg_widescreen {
+      content: "lg_widescreen";
+    }
+  }
+}

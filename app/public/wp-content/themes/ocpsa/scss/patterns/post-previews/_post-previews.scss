@@ -1,0 +1,71 @@
+.post-preview {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  @include hov {
+    color: #000;
+    .post-preview__image {
+      scale: 1.05;
+    }
+    .icon {
+      translate: 0.5rem;
+    }
+  }
+  @include tablet {
+    grid-column: span 6;
+  }
+  @include desktop {
+    grid-column: span var(--col-span-large, 4);
+  }
+  &__image {
+    margin-bottom: 1rem;
+    transition: scale $transition;
+    .image-mask {
+      -webkit-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-pentagon.svg");
+      -moz-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-pentagon.svg");
+      -ms-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-pentagon.svg");
+      mask-image: url("/wp-content/themes/ocpsa/images/image-mask-pentagon.svg");
+    }
+  }
+  &__title {
+    font-weight: normal;
+    padding: 0 1.5rem;
+  }
+  &__excerpt {
+    @include typeScaleH5;
+    padding: 0 1.5rem;
+    flex-grow: 1;
+  }
+  &__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+      color: $color__primary;
+      transition: translate $transition;
+    }
+  }
+  &:nth-child(3n) {
+    .post-preview__image {
+      .image-mask {
+        -webkit-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-square.svg");
+        -moz-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-square.svg");
+        -ms-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-square.svg");
+        mask-image: url("/wp-content/themes/ocpsa/images/image-mask-square.svg");
+        mask-size: 90%;
+      }
+    }
+  }
+  &:nth-child(3n + 1) {
+    .post-preview__image {
+      .image-mask {
+        -webkit-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-circle.svg");
+        -moz-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-circle.svg");
+        -ms-mask-image: url("/wp-content/themes/ocpsa/images/image-mask-circle.svg");
+        mask-image: url("/wp-content/themes/ocpsa/images/image-mask-circle.svg");
+      }
+    }
+  }
+}

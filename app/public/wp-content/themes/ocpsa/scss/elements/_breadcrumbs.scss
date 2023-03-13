@@ -1,0 +1,35 @@
+.breadcrumbs {
+  grid-column: 1 / -1;
+  ol {
+    margin-bottom: 1.5rem;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    @include typeScaleH5;
+    border-bottom: 0.125rem solid $color__primary;
+    display: inline-flex;
+    gap: 1.5rem;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+    @include hov {
+      color: $color__primary;
+    }
+  }
+  li {
+    position: relative;
+    + li::before {
+      content: " ";
+      display: inline-block;
+      position: absolute;
+      left: -0.75rem;
+      top: 50%;
+      translate: -50% -50%;
+      width: 0.125rem;
+      height: 70%;
+      background-color: #000;
+    }
+  }
+}

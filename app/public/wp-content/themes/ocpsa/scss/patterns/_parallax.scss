@@ -1,0 +1,35 @@
+.parallax {
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    height: 150%;
+    width: 100%;
+    top: 50%;
+    transform: var(--offset);
+    background-image: var(--bgImage);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  &--shaded {
+    &::after {
+      content: " ";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(-135deg, #0000, #000c);
+      @include bgBasic;
+      z-index: -1;
+    }
+  }
+  &.banner-slider__item {
+    &::before {
+      background-position: right center;
+    }
+  }
+}

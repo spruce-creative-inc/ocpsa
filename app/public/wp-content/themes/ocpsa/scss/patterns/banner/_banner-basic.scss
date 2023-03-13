@@ -1,0 +1,46 @@
+.banner-basic {
+  .container {
+    align-items: center;
+  }
+  &__image {
+    height: min(33.333vh, 20rem);
+    @include bgBasic;
+    margin-bottom: 1.5rem;
+  }
+  &__content {
+    @include tablet("max") {
+      order: 1;
+    }
+    @include tablet {
+      grid-column: span 8;
+    }
+    @include desktop {
+      grid-column: span 6;
+    }
+  }
+  &__byline {
+    @include typeScaleH6;
+    &--large {
+      @include typeScaleH4;
+    }
+    &--medium {
+      @include typeScaleH5;
+    }
+  }
+  &__content-image {
+    position: relative;
+    @include tablet("max") {
+      grid-column: 2 / span 10;
+    }
+    @include tablet {
+      grid-column: span 4;
+    }
+    @include desktop {
+      grid-column: span 6;
+    }
+    .decoration {
+      right: 0;
+      translate: 50% -50%;
+    }
+  }
+}

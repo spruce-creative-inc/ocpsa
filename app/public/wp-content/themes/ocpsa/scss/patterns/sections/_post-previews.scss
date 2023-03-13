@@ -1,0 +1,28 @@
+.post-previews {
+  .container {
+    position: relative;
+  }
+  .section-flexible {
+    &__content {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      @include lg_tablet {
+        grid-column: 3 / span 8;
+      }
+    }
+    &__title {
+      font-weight: 400;
+      @include typeScaleH2Alt;
+    }
+  }
+  .decoration {
+    right: 0;
+    translate: 75% -50%;
+    @include tablet {
+      translate: 50% -50%;
+    }
+    @include desktop {
+      translate: 50% 0;
+    }
+  }
+}

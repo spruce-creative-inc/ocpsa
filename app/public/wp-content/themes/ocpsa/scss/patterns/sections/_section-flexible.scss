@@ -1,0 +1,54 @@
+.section-flexible {
+  position: relative;
+  z-index: var(--zIndex);
+  &__text {
+    > :last-child {
+      margin-bottom: 0;
+    }
+    &--large {
+      @include typeScaleH4;
+    }
+    &--medium {
+      @include typeScaleH5;
+    }
+  }
+
+  &__btns {
+    padding-top: 1.5rem;
+  }
+
+  &--with-image {
+    .container {
+      align-items: center;
+    }
+    .section-flexible {
+      &__image {
+        @include tablet {
+          grid-column: span 4;
+        }
+        @include desktop {
+          grid-column: span 6;
+        }
+      }
+      &__content {
+        @include tablet {
+          grid-column: span 8;
+        }
+        @include desktop {
+          grid-column: span 6;
+        }
+      }
+    }
+  }
+
+  &.bg-primary,
+  &.bg-secondary {
+    .section-flexible__title,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+    }
+  }
+}

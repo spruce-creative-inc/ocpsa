@@ -1,0 +1,36 @@
+.embed {
+  display: flex;
+  &.embed-16by9 {
+    aspect-ratio: 16 / 9;
+  }
+  &.embed-1by1 {
+    aspect-ratio: 1 / 1;
+  }
+  &.embed-4by3 {
+    aspect-ratio: 4 / 3;
+  }
+  &.embed-3by2 {
+    aspect-ratio: 3 / 2;
+  }
+  &.embed-2by1 {
+    aspect-ratio: 2 / 1;
+  }
+  &.embed-pentagon {
+    aspect-ratio: 475 / 435;
+  }
+  &.embed-flag {
+    aspect-ratio: 555 / 502;
+  }
+  img,
+  svg,
+  iframe,
+  video {
+    @include embeded;
+  }
+  &--contain {
+    img,
+    video {
+      object-fit: contain;
+    }
+  }
+}

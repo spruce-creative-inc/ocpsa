@@ -1,0 +1,140 @@
+.logo-bar {
+  .container {
+    gap: 0.5rem;
+    &--flex {
+      justify-content: space-evenly;
+    }
+  }
+  &__item {
+    display: block;
+    transition: scale $transition;
+    flex: 0 0 12rem;
+    img {
+      object-fit: contain;
+    }
+    @include hov {
+      scale: 1.05;
+    }
+    @include tablet {
+      grid-column: span 3;
+    }
+  }
+  &__button {
+    @include buttonClear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    color: $color__primary;
+    grid-column: span 1;
+    position: relative;
+    z-index: 1;
+    align-self: center;
+    // justify-self: center;
+    @include hov {
+      color: $color__secondary;
+    }
+    &--next {
+      justify-self: flex-end;
+    }
+  }
+  &__wrap {
+    position: relative;
+    padding-top: 33.3333%;
+    // grid-row: 1 / 2;
+    grid-column: span 10;
+    overflow: hidden;
+    @include tablet {
+      padding-top: 22.2222%;
+    }
+    @include desktop {
+      padding-top: 16.6666%;
+    }
+    .logo-bar {
+      &__item {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        display: none;
+        opacity: 0;
+        transition: all $transition;
+        pointer-events: none;
+        &.slot-1,
+        &.slot-2,
+        &.slot-3,
+        &.off-left {
+          display: block;
+        }
+        &.slot-1 {
+          left: 0;
+          opacity: 1;
+          pointer-events: all;
+        }
+        &.slot-2 {
+          left: 50%;
+          opacity: 1;
+          pointer-events: all;
+        }
+        &.slot-3 {
+          left: 50%;
+          translate: 100%;
+        }
+        &.off-left {
+          left: 0;
+          translate: -100%;
+        }
+        @include tablet {
+          width: 33.3333%;
+          &.slot-1,
+          &.slot-2,
+          &.slot-3,
+          &.slot-4,
+          &.off-left {
+            display: block;
+          }
+          &.slot-2 {
+            left: 33.3333%;
+          }
+          &.slot-3 {
+            left: 66.6666%;
+            translate: 0;
+            opacity: 1;
+            pointer-events: all;
+          }
+          &.slot-4 {
+            left: 66.6666%;
+            translate: 100%;
+          }
+        }
+        @include desktop {
+          width: 25%;
+          &.slot-1,
+          &.slot-2,
+          &.slot-3,
+          &.slot-4,
+          &.off-left,
+          &.off-right {
+            display: block;
+          }
+          &.slot-2 {
+            left: 25%;
+          }
+          &.slot-3 {
+            left: 50%;
+          }
+          &.slot-4 {
+            left: 75%;
+            translate: 0;
+            opacity: 1;
+            pointer-events: all;
+          }
+          &.off-right {
+            left: 75%;
+            translate: 100%;
+          }
+        }
+      }
+    }
+  }
+}

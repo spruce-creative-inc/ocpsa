@@ -1,0 +1,85 @@
+/* Text meant only for screen readers. */
+.screen-reader-text,
+.srt {
+  @include srtBase;
+
+  // &:focus {
+  // 	background-color: $color__primary;
+  // 	border-radius: 3px;
+  // 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  // 	clip: auto !important;
+  // 	color: #fff;
+  // 	display: block;
+  // 	font-size: .875rem;
+  // 	font-weight: bold;
+  // 	height: auto;
+  // 	left: 5px;
+  // 	line-height: normal;
+  // 	padding: 15px 23px 14px;
+  // 	text-decoration: none;
+  // 	top: 5px;
+  // 	width: auto;
+  // 	z-index: 100000; /* Above WP toolbar. */
+  // }
+}
+
+*:focus-visible {
+  outline: 0.125rem solid $color__secondary;
+  outline-offset: 0.125rem;
+}
+
+.to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color__secondary;
+  color: #fff;
+  border-radius: $radius;
+  opacity: 0;
+  translate: 0 calc(100% + 1.5rem);
+  z-index: 1000000;
+  font-size: 1.5rem;
+  text-decoration: none;
+  outline-color: $color__accent;
+  transition: translate $transition, opacity $transition,
+    background-color $transition, color $transition;
+  &.visible {
+    translate: 0;
+    opacity: 0.5;
+    @include hov {
+      translate: 0;
+      opacity: 1;
+      color: #fff;
+    }
+  }
+}
+
+.skip-links {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  a {
+    position: absolute;
+    top: -10rem;
+    left: 1.5rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    width: calc(100% - 3rem);
+    background-color: $color__secondary;
+    color: #fff;
+    border-radius: $radius;
+    z-index: 100001;
+    outline-color: $color__accent;
+    @include hov {
+      color: #fff;
+      top: 0.5rem;
+    }
+  }
+}

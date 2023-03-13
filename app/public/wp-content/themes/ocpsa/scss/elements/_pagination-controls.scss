@@ -1,0 +1,40 @@
+.pagination-controls {
+  margin-top: 1.5rem;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  .page-numbers {
+    &.prev,
+    &.next {
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      text-decoration: none;
+      display: inline-flex;
+      gap: 0.75rem;
+      align-items: center;
+      i {
+        transition: translate $transition;
+      }
+    }
+    &.prev {
+      left: 0;
+      @include hov {
+        i {
+          translate: -0.5rem;
+        }
+      }
+    }
+    &.next {
+      right: 0;
+      @include hov {
+        i {
+          translate: 0.5rem;
+        }
+      }
+    }
+  }
+}

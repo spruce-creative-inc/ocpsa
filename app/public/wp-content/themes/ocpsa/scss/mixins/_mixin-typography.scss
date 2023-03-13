@@ -1,0 +1,125 @@
+@use "sass:math";
+
+@function typeScale($scale, $step, $direction: "up") {
+  $font-scale: 1rem;
+  @if ($direction == "up") {
+    @for $i from 1 through $step {
+      $font-scale: $font-scale * $scale;
+    }
+  } @else {
+    @for $i from 1 through $step {
+      $font-scale: math.div($font-scale, $scale);
+    }
+  }
+
+  $font-scale: math.div(ceil($font-scale * 100), 100);
+
+  @return $font-scale;
+}
+
+$sScale: 1.15;
+$mScale: 1.25;
+$lScale: 1.25;
+
+@mixin typeScaleXXL {
+  font-size: typeScale($sScale, 7);
+  @include tablet {
+    font-size: typeScale($mScale, 7);
+  }
+  @include desktop {
+    font-size: typeScale($lScale, 7);
+  }
+}
+
+@mixin typeScaleXL {
+  font-size: typeScale($sScale, 6);
+  @include tablet {
+    font-size: typeScale($mScale, 6);
+  }
+  @include desktop {
+    font-size: typeScale($lScale, 6);
+  }
+}
+
+@mixin typeScaleH1 {
+  font-size: 3rem;
+  @include tablet {
+    font-size: 3.5rem;
+  }
+  @include desktop {
+    font-size: 4rem;
+  }
+}
+
+@mixin typeScaleH2 {
+  font-size: 2.5rem;
+  @include tablet {
+    font-size: 2.875rem;
+  }
+  @include desktop {
+    font-size: 3.25rem;
+  }
+}
+
+@mixin typeScaleH2Alt {
+  font-size: 2rem;
+  @include tablet {
+    font-size: 2.375rem;
+  }
+  @include desktop {
+    font-size: 2.75rem;
+  }
+}
+
+@mixin typeScaleH3 {
+  font-size: 1.5;
+  @include tablet {
+    font-size: 1.75;
+  }
+  @include desktop {
+    font-size: 2rem;
+  }
+}
+
+@mixin typeScaleH4 {
+  font-size: 1.44rem;
+  @include tablet {
+    font-size: 1.65rem;
+  }
+  @include desktop {
+    font-size: 1.875rem;
+  }
+}
+
+@mixin typeScaleH5 {
+  font-size: 1.15rem;
+  @include tablet {
+    font-size: 1.31rem;
+  }
+  @include desktop {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin typeScaleH6 {
+  font-size: 1rem;
+  @include tablet {
+    font-size: 1.125rem;
+  }
+  @include desktop {
+    font-size: 1.25rem;
+  }
+}
+
+@mixin typeScaleSmall {
+  font-size: typeScale($sScale, 1, "down");
+}
+
+// 64 - h1
+// 52 - h2
+// 44 - h2-alt
+// 36 - h3
+// 30 - h4
+// 24 - h5
+// 20 - h5-alt
+// 18

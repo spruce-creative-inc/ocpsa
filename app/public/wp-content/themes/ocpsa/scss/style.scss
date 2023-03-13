@@ -1,0 +1,21 @@
+/*!
+Theme Name: OCPSA
+Text Domain: spruce
+Version: 1.0.0
+Requires at least: 5.0
+Tested up to: 6.0.2
+Requires PHP: 7.0
+Author: Spruce Creative
+Author URI: http://www.sprucecreative.ca
+Theme URI: http://www.sprucecreative.ca/
+
+*/
+
+@import "common";
+@import "variables/variables";
+@import "mixins/mixins";
+@import "fonts/fonts";
+@import "modules/modules";
+@import "elements/elements";
+@import "patterns/patterns";
+@import "modules/print";

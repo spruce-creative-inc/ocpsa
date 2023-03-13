@@ -1,0 +1,32 @@
+$color-list: (
+  "primary": $color__primary,
+  "secondary": $color__secondary,
+  "accent": $color__accent,
+  "tertiary": $color__tertiary,
+  "grey": $color__grey,
+  "grey--light": $color__grey--light,
+  "fff": "#fff",
+  "000": "#000",
+);
+
+$target-list: (
+  text: color,
+  bg: background-color,
+  fill: fill,
+);
+
+@each $cName, $cValue in $color-list {
+  @each $tName, $tValue in $target-list {
+    .#{$tName}-#{$cName} {
+      #{$tValue}: #{$cValue};
+      @if ($cName == "primary" or $cName == "secondary" or $cName == "000") {
+        color: #fff;
+      }
+    }
+  }
+}
+
+body {
+  color: $color__body;
+  background-color: $color__bg;
+}

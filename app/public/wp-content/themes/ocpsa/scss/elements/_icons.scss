@@ -1,0 +1,6 @@
+.icon {
+  display: inline-flex;
+  width: var(--icon-size, 1.5rem);
+  height: var(--icon-size, 1.5rem);
+  transition: color $transition;
+}

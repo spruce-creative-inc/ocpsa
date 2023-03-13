@@ -1,0 +1,41 @@
+.regular-content {
+  .section-flexible {
+    &__image {
+      figure {
+        margin: 0;
+        img {
+          width: 100%;
+        }
+      }
+      @include tablet("max") {
+        grid-column: 2 / span 10;
+      }
+    }
+  }
+  &:nth-child(even):not(.section-flexible--image-left),
+  &.section-flexible--image-right {
+    .section-flexible {
+      &__image {
+        @include tablet {
+          order: 1;
+        }
+      }
+    }
+  }
+  &--large-text-block {
+    @include tablet {
+      .container {
+        align-items: flex-start;
+      }
+      .section-flexible {
+        &__image {
+          grid-column: span 4;
+        }
+        &__content {
+          grid-column: span 8;
+          @include typeScaleH5;
+        }
+      }
+    }
+  }
+}

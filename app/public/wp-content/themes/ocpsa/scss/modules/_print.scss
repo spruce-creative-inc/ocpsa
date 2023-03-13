@@ -1,0 +1,18 @@
+@media print {
+  .masthead {
+    display: none;
+  }
+
+  .bg-primary,
+  .bg-secondary,
+  .bg-accent,
+  .bg-tertiary,
+  .bg-000,
+  .panels__item {
+    color: $color__body;
+  }
+
+  [class*="btn"] {
+    display: none;
+  }
+}

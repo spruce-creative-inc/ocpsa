@@ -1,0 +1,48 @@
+$sizes: (
+  "0": 0,
+  "1-2": 0.5,
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 7,
+  "8": 8,
+);
+
+$types: (
+  "pad-t": padding-top,
+  "pad-b": padding-bottom,
+  "pad-l": padding-left,
+  "pad-r": padding-right,
+  "island": padding,
+  "push": margin-bottom,
+  "push-l": margin-left,
+  "push-r": margin-right,
+);
+
+@each $tName, $tProp in $types {
+  @each $sName, $sValue in $sizes {
+    $value: 1.5rem * $sValue;
+
+    @if ($value == 0rem) {
+      $value: 0;
+    }
+
+    @if ($sName == "1") {
+      .#{$tName} {
+        #{$tProp}: #{$value};
+      }
+    } @else {
+      .#{$tName}-#{$sName} {
+        #{$tProp}: #{$value};
+      }
+    }
+  }
+}
+
+hr {
+  border: 0;
+  border-bottom: 0.0265rem solid #000;
+}
